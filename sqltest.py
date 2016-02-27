@@ -29,9 +29,9 @@ for i in datearr:
 
 print(harr[0])
 fig = plt.figure(1)
-fig.suptitle('Traffic for %s' % hostname, fontsize=14, fontweight='bold')
+fig.suptitle('Traffic for %s for %s' % (hostname, date.strftime('%A, %B %dth')), fontsize=14, fontweight='bold')
 ax = fig.add_subplot(211)
-ax.set_xlabel('Between the hours of %d and %d'  % (min(harr), max(harr)))
+ax.set_xlabel('Hour')
 ax.set_ylabel('Megabytes received')
 ax.plot(harr,bytearr)
 plt.xticks(np.arange(min(harr), max(harr)+1, 2.0))
