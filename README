@@ -1,0 +1,2 @@
+This repo will be used to manage changes to code for Davis Mixon's
+senior capstone project, Netalyst. Netalyst will be used to perform live Linux server bandwidth monitoring/graphing, as well as allow users to perform queries on a backend database in order to display static graphs of bandwidth over time.
