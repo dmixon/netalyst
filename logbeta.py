@@ -3,15 +3,20 @@ import time
 import pymysql
 import re
 
+
+
+#This represents an early representation of the template script that Netalyst will execute whenever a user selects
+#a host to begin logging. Currently it is hard coded, but later it will take in user parameters from the main program.
+
 ssh = paramiko.SSHClient()
 ssh2 = paramiko.SSHClient()
 ssh3 = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 ssh2.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 ssh3.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-ssh.connect('192.168.254.37',username='dmixon',password='Strace18!')
-ssh2.connect('192.168.254.13',username='dmixon',password='Strace18!')
-ssh3.connect('192.168.254.27',username='dmixon',password='Strace18!')
+ssh.connect('192.168.254.37',username='dmixon',password='Lebron236')
+ssh2.connect('192.168.254.38',username='dmixon',password='Lebron236')
+ssh3.connect('192.168.254.27',username='dmixon',password='Lebron236')
 stdin, stdout, stderr = ssh.exec_command("hostname")
 stdin2, stdout2, stderr2 = ssh2.exec_command("hostname")
 stdin3, stdout3, stderr3 = ssh3.exec_command("hostname")
@@ -24,7 +29,7 @@ hostname2 = "".join(filter(lambda char: char!= "/n", p2))
 hostname2 = "".join(filter(lambda x: not re.match(r'^\s*$', x), hostname2)) 
 hostname3 = "".join(filter(lambda char: char!= "/n", p3))
 hostname3 = "".join(filter(lambda x: not re.match(r'^\s*$', x), hostname3)) 
-db = pymysql.connect("localhost","root","Strace18!","NETDB" )
+db = pymysql.connect("localhost","root","Lebron236","NETDB" )
 cursor = db.cursor()
 
 while True:
